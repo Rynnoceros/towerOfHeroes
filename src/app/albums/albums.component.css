@@ -1,0 +1,17 @@
+[class*='col-'] {
+    float: left;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+  [class*='col-']:last-of-type {
+    padding-right: 0;
+  }
+
+.folder {
+    border-style: solid;
+    border-radius: 10px;
+    margin-left: 2px;
+    margin-bottom: 2px;
+    text-align: center;
+    cursor: pointer;
+}

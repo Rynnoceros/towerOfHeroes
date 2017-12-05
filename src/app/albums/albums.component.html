@@ -1,0 +1,14 @@
+<div *ngIf="!albumSelected">
+  <h3>Liste des albums</h3>
+  <div *ngFor="let album of albums">
+    <div class="folder col-1-4" [style.background]="getColorByAlbumId(album.id)" (click)="displayPhotos(album)">
+        Id : {{album.id}} <br>
+        Nb photos : {{album.listePhotos.length}}
+    </div>
+  </div>
+</div>
+<div *ngIf="albumSelected">
+  <h3>Liste des photos de l'album {{albumSelected?.id}}</h3>
+  <button (click)="retourAlbums()">Retour à la liste d'album</button>
+  <app-photos [listePhotos]="albumSelected?.listePhotos"></app-photos>
+</div>

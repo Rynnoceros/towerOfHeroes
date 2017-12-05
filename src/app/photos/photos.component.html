@@ -1,0 +1,18 @@
+<div *ngIf="loading">
+  <img src="app/ressources/loading.gif">
+</div>
+<div *ngIf="!loading">
+  <h3>{{listePhotos ? '' : 'Liste des photos'}}</h3>
+  <ul>
+    <li *ngFor="let photo of photos">
+      <div>
+        <img [src]="photo.thumbnailUrl" width="25px" style="vertical-align: middle"/>
+        {{photo.title}}
+        <i (click)="showBigImage(photo)" class="{{photo.displayedPhoto ? 'fa fa-thumbs-o-up' : 'fa fa-thumbs-o-down'}}" aria-hidden="true"></i>
+        <div *ngIf="photo.displayedPhoto">
+          <img [src]="photo.displayedPhoto"/>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
